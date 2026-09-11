@@ -83,7 +83,7 @@
 .contact-details .text-link{margin-top:12px}
 .map-placeholder{min-height:440px;gap:22px;color:#526458}
 .map-placeholder p{margin:0}
-.footer-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr) 55px;align-items:center;gap:32px}
+.footer-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr) 55px;align-items:end;gap:32px}
 .footer-top>p{margin:0}
 .footer-links{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2fr);gap:32px}
 .footer-links>div{min-width:0;font-size:14px;gap:14px}

@@ -45,6 +45,11 @@
 .brand.brand-full{width:210px;height:113px;min-width:0;max-width:100%}
 @media(max-width:700px){header{gap:14px}header .brand.brand-image{width:116px;height:60px;min-width:116px}header>.button{gap:10px;padding:13px 15px}}
 .panel.route-section{background:#0E725A;color:#fff}
+@media(min-width:701px){
+ .route-section .section-heading,.route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:30px}
+ .route-section .section-heading>div{grid-column:1 / span 2;min-width:0}
+ .route-section .section-heading>p{grid-column:3;justify-self:start}
+}
 .panel.result{background:#3E4446;color:#fff}
 .panel.contact{background:#dce6e0}
 .button{color:#fff;background:#3E4446}

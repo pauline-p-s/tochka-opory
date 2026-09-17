@@ -24,13 +24,14 @@
   --border: #d8dfdb;
   --ring: #0e725a;
   --radius: 0;
+  --site-header-height: 110px;
 }
 * {
   box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 110px;
+  scroll-padding-top: calc(var(--site-header-height) + 20px);
 }
 body {
   margin: 0;
@@ -879,8 +880,8 @@ footer {
   }
 }
 @media (max-width: 700px) {
-  html {
-    scroll-padding-top: 20px;
+  :root {
+    --site-header-height: 138px;
   }
   .section {
     padding: 32px 20px;

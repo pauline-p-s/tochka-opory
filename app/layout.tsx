@@ -3,6 +3,7 @@ import './globals.css';
 import './refinements.css';
 import './motion.css';
 import './services.css';
+import './navigation.css';
 export const metadata: Metadata = {
   title: 'Точка опоры — свобода движения',
   description: 'Центр реабилитации позвоночника и суставов в Москве.',

@@ -1,20 +1,12 @@
 import DesktopMotion from './desktop-motion';
 import ContactDialog, { ContactButton } from './contact-dialog';
 import Content from './content';
-import Brand from './brand';
+import SiteHeader from './site-header';
 export default function Home() {
   return (
     <ContactDialog>
-      <main>
-        <header>
-          <Brand />
-          <nav>
-            <a href="#about">О центре</a>
-            <a href="#prices">Стоимость</a>
-            <a href="#team">Специалисты</a>
-          </nav>
-          <ContactButton className="button">Связаться с нами ↗</ContactButton>
-        </header>
+      <SiteHeader />
+      <main id="top">
         <section className="hero panel">
           <div className="hero-copy">
             <p className="eyebrow">

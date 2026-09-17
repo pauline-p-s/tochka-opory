@@ -1,0 +1,229 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: block;
+  height: auto;
+  background: #f1f1f1;
+  border-bottom: 1px solid #d8dfdb;
+}
+.site-header-inner,
+.site-menu-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: var(--site-header-height);
+}
+.header-address {
+  margin-right: auto;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.header-address span {
+  display: block;
+}
+.header-address span:last-child {
+  color: #0e725a;
+}
+.header-contact {
+  flex-shrink: 0;
+}
+.header-contact-short {
+  display: none;
+}
+.menu-toggle {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  padding: 6px;
+  color: #0e725a;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.menu-toggle:hover {
+  background: rgb(14 114 90 / 8%);
+}
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgb(25 49 42 / 35%);
+  backdrop-filter: blur(5px);
+  transition: opacity 240ms ease;
+}
+.site-menu {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 51;
+  max-height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #0e725a;
+  color: #fff;
+  outline: none;
+  transition:
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 240ms ease;
+}
+.site-menu[data-starting-style],
+.site-menu[data-ending-style] {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.menu-backdrop[data-starting-style],
+.menu-backdrop[data-ending-style] {
+  opacity: 0;
+}
+.site-menu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--site-header-height);
+}
+.site-menu .brand-image img {
+  filter: brightness(0) invert(1);
+}
+.site-menu .menu-toggle {
+  color: #fff;
+}
+.site-menu .menu-toggle:hover {
+  background: rgb(255 255 255 / 10%);
+}
+.site-menu a:focus-visible,
+.site-menu button:focus-visible {
+  outline-color: #fff;
+}
+.site-menu-body {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 64px;
+  padding: 40px 0 64px;
+}
+.site-menu-links {
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 13px 40px;
+  font-size: clamp(20px, 2.25vw, 32px);
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+}
+.site-menu-links a {
+  width: fit-content;
+}
+.site-menu a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+.site-menu-contact {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.site-menu-contact .site-menu-label {
+  margin: 0 0 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c8e8df;
+}
+.site-menu-contact > p:not(.site-menu-label) {
+  margin: 16px 0 28px;
+  font-size: 15px;
+  color: #c8e8df;
+}
+.button.menu-contact-button {
+  width: 100%;
+  background: #d5f3e6;
+  color: #154c3d;
+  border-color: #d5f3e6;
+  font-size: 14px;
+}
+.button.menu-contact-button:hover {
+  background: #fff;
+  border-color: #fff;
+}
+@media (max-width: 1050px) {
+  .site-header-inner {
+    gap: 20px;
+  }
+  .header-contact-long {
+    display: none;
+  }
+  .header-contact-short {
+    display: inline;
+  }
+  .site-menu-body {
+    gap: 32px;
+  }
+  .site-menu-links {
+    gap: 16px 24px;
+  }
+}
+@media (max-width: 700px) {
+  .site-header-inner,
+  .site-menu-inner {
+    padding: 0 16px;
+  }
+  .site-header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-rows: 72px 1fr;
+    gap: 0 12px;
+    padding-bottom: 12px;
+  }
+  .header-address {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .site-header .header-contact {
+    padding: 10px 12px;
+    font-size: 12px;
+    gap: 10px;
+  }
+  .site-menu-top {
+    height: 88px;
+  }
+  .site-menu-top .brand-image {
+    width: 116px;
+    height: 60px;
+    min-width: 116px;
+  }
+  .site-menu-body {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 16px 0 32px;
+  }
+  .site-menu-links {
+    grid-auto-flow: row;
+    grid-template-rows: none;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    font-size: 24px;
+  }
+  .site-menu-contact {
+    border-top: 1px solid rgb(255 255 255 / 25%);
+    padding-top: 28px;
+  }
+  .site-menu-contact a br {
+    display: none;
+  }
+  .site-menu-contact a {
+    display: block;
+    max-width: 290px;
+  }
+}

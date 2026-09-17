@@ -1,5 +1,24 @@
 import ContactDialog, { ContactButton } from '../contact-dialog';
-import { priceCategories } from '../price-content';
+import { priceCategories, type PriceItem } from '../price-content';
+
+function TariffList({ items }: { items: PriceItem[] }) {
+  return (
+    <dl className="tariff-list">
+      {items.map((item) => (
+        <div key={item.title}>
+          <dt>
+            {item.title}
+            {item.description && (
+              <span className="tariff-description">{item.description}</span>
+            )}
+          </dt>
+          <dd>{item.price}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
 export default function PriceDetail({ slug }: { slug: string }) {
   const category = priceCategories.find((item) => item.slug === slug)!;
   const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -16,15 +35,27 @@ export default function PriceDetail({ slug }: { slug: string }) {
           <p className="eyebrow">Стоимость</p>
           <h1>{category.title}</h1>
           <p className="price-page-lead">{category.description}</p>
-          {category.items.length ? (
-            <dl className="tariff-list">
-              {category.items.map((item) => (
-                <div key={item.title}>
-                  <dt>{item.title}</dt>
-                  <dd>{item.price}</dd>
-                </div>
+          {category.items.length || category.groups?.length ? (
+            <>
+              {category.slug !== 'test-course' && (
+                <p className="price-updated">Расценки на сентябрь 2026</p>
+              )}
+              {category.items.length > 0 && (
+                <TariffList items={category.items} />
+              )}
+              {category.groups?.map((group) => (
+                <section className="tariff-group" key={group.title}>
+                  <h2>{group.title}</h2>
+                  {group.description && (
+                    <p className="tariff-group-description">
+                      {group.description}
+                    </p>
+                  )}
+                  <TariffList items={group.items} />
+                </section>
               ))}
-            </dl>
+              {category.note && <p className="tariff-note">{category.note}</p>}
+            </>
           ) : (
             <div className="tariff-pending">
               <h2>Прайс готовится к публикации</h2>

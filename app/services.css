@@ -177,6 +177,37 @@
   font-size: 28px;
   font-weight: 500;
   color: #0e725a;
+  white-space: nowrap;
+}
+.price-updated {
+  color: #0e725a;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.tariff-group {
+  margin: 48px 0;
+}
+.tariff-group h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  color: #0e725a;
+}
+.tariff-group-description,
+.tariff-note {
+  max-width: 680px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.tariff-group .tariff-list {
+  margin: 24px 0 0;
+}
+.tariff-description {
+  display: block;
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.tariff-note {
+  margin: 0 0 40px;
 }
 .tariff-pending {
   background: #f1f1f1;

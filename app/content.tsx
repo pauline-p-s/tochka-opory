@@ -2,10 +2,8 @@ import NeedsSection from './sections/needs';
 import AboutSection from './sections/about';
 import ApproachSection from './sections/approach';
 import RouteSection from './sections/recovery-route';
-import DirectionsSection from './sections/directions';
 import TeamSection from './sections/team';
 import SpaceSection from './sections/space';
-import ResultSection from './sections/result';
 import ReviewsSection from './sections/reviews';
 import PricesSection from './sections/prices';
 import FaqSection from './sections/faq';
@@ -18,10 +16,8 @@ export default function Content() {
       <AboutSection />
       <ApproachSection />
       <RouteSection />
-      <DirectionsSection />
       <TeamSection />
       <SpaceSection />
-      <ResultSection />
       <ReviewsSection />
       <PricesSection />
       <FaqSection />

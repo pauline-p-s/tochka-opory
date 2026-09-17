@@ -9,15 +9,13 @@ export default function ApproachSection() {
           <>
             Полный путь восстановления.
             <br />
-            <em>С опорой на вас.</em>
+            <em>
+              От определения причины до закрепления результата — в одном
+              специализированном центре.
+            </em>
           </>
         }
-      >
-        <p>
-          От определения причины до закрепления результата — в одном
-          специализированном центре.
-        </p>
-      </Heading>
+      />
       <div className="usp-grid">
         {advantages.map(([number, title, description]) => (
           <article className="usp-card" key={number}>

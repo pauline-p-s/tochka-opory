@@ -356,22 +356,8 @@ h3 {
   justify-content: space-between;
   font-size: 13px;
 }
-.need-0 {
-  background: #0e725a;
-  color: white;
-}
-.need-0 p {
-  color: #dae9e1;
-}
-.need-0:hover {
-  background: #145c4b;
-}
-.need-4 {
-  background: #3e4446;
-  color: white;
-}
-.need-4 p {
-  color: #e0e3e1;
+.need-accent h3 {
+  color: #0e725a;
 }
 .why-grid {
   display: grid;
@@ -493,7 +479,7 @@ h3 {
 }
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
 }
 .person .placeholder {

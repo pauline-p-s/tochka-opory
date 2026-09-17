@@ -9,20 +9,27 @@ export default function NeedsSection() {
         label="Начните с себя"
         title={
           <>
-            Что вас
+            Чем мы можем
             <br />
-            <em>беспокоит?</em>
+            <em>вам помочь?</em>
           </>
         }
-      >
-        <p>
-          Вам не нужно знать, какой специалист нужен. Начните с того, что мешает
-          двигаться свободно.
-        </p>
-      </Heading>
+      />
       <div className="needs-grid">
         {needs.map(([title, desc], i) => (
-          <ContactButton className={'need-card need-' + i} key={title}>
+          <ContactButton
+            className={
+              'need-card' +
+              ([
+                'Сидячий образ жизни',
+                'После травмы',
+                'После операции',
+              ].includes(title)
+                ? ' need-accent'
+                : '')
+            }
+            key={title}
+          >
             <span className="card-top">
               0{i + 1}
               <ArrowUpRight size={22} />

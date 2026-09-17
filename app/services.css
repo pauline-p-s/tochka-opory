@@ -1,0 +1,247 @@
+/* Customer revision: specialist profiles, service prices and the real address. */
+.hero-lead-line {
+  display: block;
+  margin-top: 12px;
+}
+.field-optional {
+  font-size: 12px;
+  font-weight: 400;
+  color: #626c66;
+}
+.usp-section h2 em {
+  display: block;
+  margin-top: 24px;
+  max-width: 920px;
+  font-size: 0.55em;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+.need-card h3 {
+  font-size: 25px;
+}
+.need-card p {
+  color: #3e4446;
+}
+.person {
+  border: 1px solid #182824;
+  min-width: 0;
+  align-self: start;
+}
+.person .placeholder {
+  border-bottom: 3px solid #007f64;
+}
+.person-body {
+  padding: 28px;
+}
+.person-body .person-role {
+  margin-top: 0;
+}
+.person-experience {
+  font-weight: 600;
+  margin: 14px 0;
+  color: #0e725a;
+}
+.person-body > p {
+  font-size: 15px;
+}
+.person details ul {
+  padding-left: 20px;
+  line-height: 1.7;
+}
+.person details li {
+  margin: 12px 0;
+}
+.person details h4 {
+  font-size: 16px;
+  margin: 12px 0;
+}
+.person details[open] summary svg {
+  transform: rotate(45deg);
+}
+#reviews .section-heading {
+  margin-bottom: 0;
+}
+.price-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+.subscription-intro {
+  align-self: center;
+  padding: 32px;
+}
+.subscription-intro h3 {
+  font-size: 42px;
+}
+.subscription-intro p {
+  max-width: 480px;
+}
+.subscription-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 18px;
+}
+.service-card,
+.massage-group {
+  padding: 28px;
+  background: #f1f1f1;
+  min-width: 0;
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border: 1px solid transparent;
+}
+.service-card:hover {
+  border-color: #0e725a;
+}
+.service-card h3,
+.massage-group h3 {
+  font-size: 24px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.service-card > .text-link {
+  margin-top: auto;
+}
+.service-card > span {
+  font-size: 14px;
+}
+.massage-links {
+  display: grid;
+}
+.massage-links a {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  font-size: 15px;
+  border-bottom: 1px solid #c3cdc7;
+}
+.massage-links a:last-child {
+  border-bottom: 0;
+}
+.massage-links a:hover {
+  color: #0e725a;
+}
+.price-discount {
+  margin: 24px 0;
+  font-size: 14px;
+  color: #3e4446;
+}
+.contact-map {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-map iframe {
+  width: 100%;
+  min-height: 470px;
+  flex: 1;
+  border: 0;
+  background: #e5eae7;
+}
+.price-page {
+  max-width: 1200px;
+}
+.price-page h1 {
+  font-size: clamp(34px, 5vw, 68px);
+  line-height: 1.1;
+  max-width: 900px;
+  letter-spacing: -0.05em;
+  overflow-wrap: anywhere;
+}
+.price-page-lead {
+  max-width: 680px;
+  font-size: 18px;
+}
+.tariff-list {
+  margin: 48px 0;
+}
+.tariff-list > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 28px 0;
+  border-top: 1px solid #c3cdc7;
+}
+.tariff-list dt {
+  font-size: 24px;
+}
+.tariff-list dd {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+  color: #0e725a;
+}
+.tariff-pending {
+  background: #f1f1f1;
+  padding: 32px;
+  margin: 40px 0;
+}
+.tariff-pending h2 {
+  font-size: 28px;
+}
+.price-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  padding: 16px 0 48px;
+}
+.price-page-nav a {
+  font-size: 14px;
+  color: #0e725a;
+}
+@media (max-width: 1050px) {
+  .subscription-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .massage-group {
+    grid-column: 1/-1;
+  }
+  .massage-links {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 28px;
+  }
+}
+@media (max-width: 700px) {
+  .price-intro-grid,
+  .subscription-grid {
+    grid-template-columns: 1fr;
+  }
+  .subscription-intro {
+    padding: 12px 0;
+  }
+  .subscription-intro h3 {
+    font-size: 32px;
+  }
+  .person-body,
+  .service-card,
+  .massage-group {
+    padding: 22px;
+  }
+  .massage-links {
+    grid-template-columns: 1fr;
+  }
+  .contact-map iframe {
+    min-height: 350px;
+  }
+  .usp-section h2 em {
+    font-size: 0.7em;
+  }
+  .tariff-list > div {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tariff-pending {
+    padding: 24px;
+  }
+  .price-page header {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

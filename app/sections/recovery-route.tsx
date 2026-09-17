@@ -9,7 +9,7 @@ export default function RouteSection() {
         label="Ваш маршрут восстановления"
         title={
           <>
-            6 шагов к вашей
+            4 шага к вашей
             <br />
             жизни без боли.
           </>

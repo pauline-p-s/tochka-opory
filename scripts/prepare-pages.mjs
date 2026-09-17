@@ -1,4 +1,4 @@
-import { readdir, readFile, writeFile, access } from 'node:fs/promises';
+import { readdir, readFile, writeFile, access, mkdir, copyFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const root = path.resolve('dist/client');
@@ -21,6 +21,20 @@ async function prepare(directory) {
   }
 }
 await prepare(root);
+// Vinext emits nested routes as .html files. GitHub Pages needs index.html
+// directories for our trailing-slash links and direct page refreshes.
+async function createPageDirectories(directory) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const file = path.join(directory, entry.name);
+    if (entry.isDirectory()) await createPageDirectories(file);
+    else if (entry.name.endsWith('.html') && !['index.html', '404.html'].includes(entry.name)) {
+      const pageDirectory = file.slice(0, -5);
+      await mkdir(pageDirectory, { recursive: true });
+      await copyFile(file, path.join(pageDirectory, 'index.html'));
+    }
+  }
+}
+await createPageDirectories(root);
 await writeFile(path.join(root, '.nojekyll'), '');
 
 const html = await readFile(path.join(root, 'index.html'), 'utf8');

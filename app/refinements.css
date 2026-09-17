@@ -12,10 +12,6 @@
   background: #f1f1f1;
   min-width: 0;
 }
-.usp-card:nth-child(2) {
-  background: #0e725a;
-  color: #fff;
-}
 .usp-card > span {
   display: block;
   font-size: 13px;
@@ -23,6 +19,7 @@
   color: #0e725a;
 }
 .usp-card h3 {
+  color: #0e725a;
   font-size: 28px;
   max-width: 370px;
 }
@@ -31,10 +28,6 @@
   line-height: 1.65;
   color: #626c66;
   margin: 0;
-}
-.usp-card:nth-child(2) > span,
-.usp-card:nth-child(2) p {
-  color: #fff;
 }
 .team-tabs[data-slot='tabs-list'] {
   display: flex;
@@ -81,6 +74,7 @@
     padding: 24px;
   }
   .usp-card h3 {
+    color: #0e725a;
     font-size: 25px;
   }
   .team-tabs [data-slot='tabs-trigger'] {
@@ -332,7 +326,8 @@
 }
 .button {
   color: #fff;
-  background: #3e4446;
+  background: #007f64;
+  border: 1px solid #182824;
 }
 .button:hover,
 .button:focus-visible {
@@ -341,7 +336,7 @@
 }
 .button.green {
   color: #fff;
-  background: #0e725a;
+  background: #007f64;
 }
 .button.green:hover,
 .button.green:focus-visible {
@@ -356,13 +351,6 @@
 .button.light:focus-visible {
   color: #3e4446;
   background: #e2ede7;
-}
-.need-card.need-4:hover {
-  background: #265447;
-  color: #fff;
-}
-.need-card.need-4:hover p {
-  color: #e0e3e1;
 }
 .team-tabs [data-slot='tabs-trigger']:not([data-active]) {
   color: #3e4446;

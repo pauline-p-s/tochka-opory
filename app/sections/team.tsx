@@ -1,7 +1,6 @@
 import { Heading, Photo } from './shared';
 import { Plus } from 'lucide-react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { groups } from '../site-content';
+import { specialists } from '../team-content';
 export default function TeamSection() {
   return (
     <section className="section panel reveal" id="team">
@@ -16,44 +15,39 @@ export default function TeamSection() {
         }
       >
         <p>
-          Состав команды зависит от вашей задачи. Специалисты разных направлений
-          работают в рамках общей программы и помогают закрепить достигнутый
-          результат.
+          Специалисты работают в рамках общей программы и помогают закрепить
+          достигнутый результат.
         </p>
       </Heading>
-      <Tabs defaultValue="Специалисты ЛФК">
-        <TabsList className="team-tabs" aria-label="Специальности команды">
-          {groups.map(([name]) => (
-            <TabsTrigger key={name} value={name}>
-              {name}
-            </TabsTrigger>
+      <div className="team-grid">
+        {specialists
+          .filter((person) => person.published)
+          .map((person) => (
+            <article className="person" key={person.name}>
+              <Photo label={'Фото · ' + person.name} />
+              <div className="person-body">
+                <p className="person-role">{person.role}</p>
+                <h3>{person.name}</h3>
+                <p className="person-experience">Стаж {person.experience}</p>
+                <p>{person.specialty}</p>
+                <details>
+                  <summary>
+                    О специалисте <Plus size={16} />
+                  </summary>
+                  <h4>Образование и повышение квалификации</h4>
+                  <ul>
+                    {person.education.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  <p className="muted">
+                    Сканы дипломов и сертификатов будут добавлены.
+                  </p>
+                </details>
+              </div>
+            </article>
           ))}
-        </TabsList>
-        {groups.map(([name, roles]) => (
-          <TabsContent value={name} key={name}>
-            <div className="team-grid">
-              {roles.map((role) => (
-                <article className="person" key={role}>
-                  <Photo label="Фото специалиста" />
-                  <p className="person-role">{role}</p>
-                  <h3>Имя и фамилия</h3>
-                  <p className="muted">Данные специалиста будут добавлены</p>
-                  <details>
-                    <summary>
-                      О специалисте <Plus size={16} />
-                    </summary>
-                    <p>
-                      Здесь появятся стаж, специализация, образование, повышение
-                      квалификации, рассказ специалиста о своём подходе и
-                      информация о том, с кем он не работает.
-                    </p>
-                  </details>
-                </article>
-              ))}
-            </div>
-          </TabsContent>
-        ))}
-      </Tabs>
+      </div>
     </section>
   );
 }

@@ -10,7 +10,7 @@ export default function Home() {
           <Brand />
           <nav>
             <a href="#about">О центре</a>
-            <a href="#directions">Направления</a>
+            <a href="#prices">Стоимость</a>
             <a href="#team">Специалисты</a>
           </nav>
           <ContactButton className="button">Связаться с нами ↗</ContactButton>
@@ -28,8 +28,11 @@ export default function Home() {
               <em>движения.</em>
             </h1>
             <p className="lead">
-              После травм, операций, при боли и ограничении подвижности. Найдём
-              вашу точку опоры и выстроим маршрут восстановления.
+              После травм, операций, при боли и ограничении подвижности.
+              <span className="hero-lead-line">Найдём вашу точку опоры.</span>
+              <span className="hero-lead-line">
+                Поможем сохранить вашу спортивную форму.
+              </span>
             </p>
             <ContactButton className="button green">
               Записаться на консультацию <span>↗</span>

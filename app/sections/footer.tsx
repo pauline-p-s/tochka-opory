@@ -17,7 +17,7 @@ export default function FooterSection() {
         <div>
           <b>О центре</b>
           <a href="#about">О центре</a>
-          <a href="#directions">Направления</a>
+          <a href="#for-whom">Чем мы можем помочь</a>
           <a href="#team">Специалисты</a>
           <a href="#space">Пространство</a>
         </div>
@@ -29,10 +29,12 @@ export default function FooterSection() {
           <a href="#contacts">Контакты</a>
         </div>
         <div className="documents">
-          <b>Пациентам</b>
+          <b>Документы</b>
           <ul>
             {documents.map((doc) => (
-              <li key={doc}>{doc}</li>
+              <li key={doc}>
+                <a href="#faq">{doc}</a>
+              </li>
             ))}
           </ul>
           <small>Документы будут добавлены.</small>

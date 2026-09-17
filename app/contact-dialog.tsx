@@ -83,14 +83,16 @@ export default function ContactDialog({ children }: { children: ReactNode }) {
               maxLength={25}
               pattern={'[+0-9\\s\\(\\)\\-]{7,25}'}
             />
-            <label htmlFor="email">Электронная почта</label>
+            <label htmlFor="email">
+              Электронная почта{' '}
+              <span className="field-optional">(необязательно)</span>
+            </label>
             <Input
               id="email"
               name="email"
               type="email"
               autoComplete="email"
               placeholder="mail@example.ru"
-              required
             />
             <button className="button green" type="submit">
               Свяжитесь со мной <ArrowUpRight size={19} />

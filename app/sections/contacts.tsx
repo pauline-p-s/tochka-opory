@@ -7,7 +7,7 @@ export default function ContactsSection() {
         label="Контакты"
         title={
           <>
-            Мы <em>рядом.</em>
+            Мы <em>рядом</em>
           </>
         }
       />

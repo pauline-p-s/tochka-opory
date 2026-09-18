@@ -13,9 +13,9 @@ export default function FaqSection() {
         <h2>
           Давайте
           <br />
-          <em>разберёмся.</em>
+          <em>разберёмся</em>
         </h2>
-        <p>Самое важное перед первым обращением.</p>
+        <p>Самое важное перед первым обращением</p>
       </div>
       <Accordion defaultValue={['0']}>
         {questions.map(([q, a], i) => (

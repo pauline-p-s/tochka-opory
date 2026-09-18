@@ -7,7 +7,7 @@ export default function ReviewsSection() {
         title={
           <>
             За каждым движением —<br />
-            <em>своя история.</em>
+            <em>своя история</em>
           </>
         }
       />

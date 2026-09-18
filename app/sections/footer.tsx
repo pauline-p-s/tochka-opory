@@ -7,7 +7,7 @@ export default function FooterSection() {
         <Brand full />
         <p>
           Свобода движения
-          <br />с опорой на будущее.
+          <br />с опорой на будущее
         </p>
         <a className="top-link" href="#" aria-label="Наверх">
           ↑

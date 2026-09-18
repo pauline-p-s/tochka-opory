@@ -47,19 +47,19 @@ export const priceCategories: PriceCategory[] = [
     slug: 'individual',
     title: 'Индивидуальные занятия в зале со специалистом',
     description:
-      'Для регулярных оздоровительных программ и поддержки результата.',
+      'Для регулярных оздоровительных программ и поддержки результата',
     items: [],
   },
   {
     slug: 'gym',
     title: 'Абонемент в спортивный зал',
-    description: 'Два тарифа и абонементы на 1, 3, 6 или 12 месяцев.',
+    description: 'Два тарифа и абонементы на 1, 3, 6 или 12 месяцев',
     items: [],
     groups: [
       {
         title: 'Тариф №1',
         description:
-          'Посещение с 11:00 до 18:00 каждый день, кроме воскресенья.',
+          'Посещение с 11:00 до 18:00 каждый день, кроме воскресенья',
         items: [
           {
             title: '1 месяц',
@@ -85,7 +85,7 @@ export const priceCategories: PriceCategory[] = [
       },
       {
         title: 'Тариф №2',
-        description: 'Без ограничения времени посещения в часы работы центра.',
+        description: 'Без ограничения времени посещения в часы работы центра',
         items: [
           {
             title: '1 месяц',
@@ -114,7 +114,7 @@ export const priceCategories: PriceCategory[] = [
   {
     slug: 'classic-massage',
     title: 'Классический массаж',
-    description: 'Разовые сеансы и курсы на 3, 6 или 12 сеансов.',
+    description: 'Разовые сеансы и курсы на 3, 6 или 12 сеансов',
     items: [{ title: 'Разовый сеанс (60 минут)', price: '6 000 ₽' }],
     groups: massageCourses([
       ['17 100', '30 600', '57 600'],
@@ -126,7 +126,7 @@ export const priceCategories: PriceCategory[] = [
   {
     slug: 'sports-massage',
     title: 'Спортивный массаж',
-    description: 'Разовые сеансы и курсы на 3, 6 или 12 сеансов.',
+    description: 'Разовые сеансы и курсы на 3, 6 или 12 сеансов',
     items: [{ title: 'Разовый сеанс (60 минут)', price: '6 500 ₽' }],
     groups: massageCourses([
       ['18 500', '33 100', '62 400'],
@@ -138,7 +138,7 @@ export const priceCategories: PriceCategory[] = [
   {
     slug: 'meta-massage',
     title: 'Метамассаж',
-    description: 'Разовые сеансы и курсы на 3, 6 или 12 сеансов.',
+    description: 'Разовые сеансы и курсы на 3, 6 или 12 сеансов',
     items: [{ title: 'Разовый сеанс (60 минут)', price: '8 000 ₽' }],
     groups: massageCourses([
       ['22 800', '40 800', '76 800'],
@@ -150,7 +150,7 @@ export const priceCategories: PriceCategory[] = [
   {
     slug: 'zonal-massage',
     title: 'Зональный массаж и дополнительные услуги',
-    description: 'Стоимость и продолжительность сеансов по зонам.',
+    description: 'Стоимость и продолжительность сеансов по зонам',
     items: [],
     groups: [
       {

@@ -17,13 +17,13 @@ export default function Home() {
               <br />
               свободу
               <br />
-              <em>движения.</em>
+              <em>движения</em>
             </h1>
             <p className="lead">
-              После травм, операций, при боли и ограничении подвижности.
-              <span className="hero-lead-line">Найдём вашу точку опоры.</span>
+              После травм, операций, при боли и ограничении подвижности
+              <span className="hero-lead-line">Найдём вашу точку опоры</span>
               <span className="hero-lead-line">
-                Поможем сохранить вашу спортивную форму.
+                Поможем сохранить вашу спортивную форму
               </span>
             </p>
             <ContactButton className="button green">
@@ -36,7 +36,7 @@ export default function Home() {
             <div className="media-note">
               Новая точка
               <br />
-              вашей опоры.<span>01 / Движение начинается здесь</span>
+              вашей опоры<span>01 / Движение начинается здесь</span>
             </div>
           </div>
         </section>

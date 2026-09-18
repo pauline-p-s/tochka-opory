@@ -65,8 +65,8 @@ export default function ContactDialog({ children }: { children: ReactNode }) {
           </DialogTitle>
           <DialogDescription className="contact-dialog-description">
             {sent
-              ? 'Мы скоро с вами свяжемся.'
-              : 'Оставьте контакты — поможем определить, с чего начать.'}
+              ? 'Мы скоро с вами свяжемся'
+              : 'Оставьте контакты — поможем определить, с чего начать'}
           </DialogDescription>
           {sent ? (
             <div className="contact-dialog-success" role="status">

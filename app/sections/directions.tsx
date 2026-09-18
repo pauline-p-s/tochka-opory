@@ -9,7 +9,7 @@ export default function DirectionsSection() {
           <>
             Помогаем вернуть
             <br />
-            <em>свободу движения.</em>
+            <em>свободу движения</em>
           </>
         }
       />

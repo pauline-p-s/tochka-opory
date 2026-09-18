@@ -18,7 +18,7 @@ export default function PricesSection() {
         <div className="subscription-intro">
           <p className="eyebrow">Регулярная работа</p>
           <h3>Абонементы</h3>
-          <p>Для регулярных оздоровительных программ и поддержки результата.</p>
+          <p>Для регулярных оздоровительных программ и поддержки результата</p>
         </div>
       </div>
       <div className="subscription-grid">
@@ -53,7 +53,7 @@ export default function PricesSection() {
       <div className="certificate-row">
         <div>
           <h3>Сертификаты</h3>
-          <p>Номиналы и условия использования уточняются у менеджера.</p>
+          <p>Номиналы и условия использования уточняются у менеджера</p>
         </div>
         <ContactButton className="text-link">
           Связаться с менеджером ↗

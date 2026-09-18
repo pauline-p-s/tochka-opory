@@ -1,6 +1,7 @@
 import { Heading } from './shared';
 import { ContactButton } from '../contact-dialog';
-import { priceCategories, priceUrl } from '../price-content';
+import { priceCategories } from '../price-content';
+import { PriceButton } from '../price-dialog';
 export default function PricesSection() {
   return (
     <section className="section panel reveal" id="prices">
@@ -10,9 +11,9 @@ export default function PricesSection() {
           <span className="eyebrow">Первый шаг</span>
           <h3>Тестовый курс</h3>
           <strong>Специальная цена</strong>
-          <a className="button light" href={priceUrl('test-course')}>
+          <PriceButton className="button light" category={priceCategories[0]}>
             Узнать стоимость ↗
-          </a>
+          </PriceButton>
         </article>
         <div className="subscription-intro">
           <p className="eyebrow">Регулярная работа</p>
@@ -22,28 +23,28 @@ export default function PricesSection() {
       </div>
       <div className="subscription-grid">
         {priceCategories.slice(1, 3).map((category) => (
-          <a
+          <PriceButton
             className="service-card"
-            href={priceUrl(category.slug)}
+            category={category}
             key={category.slug}
           >
-            <h3>{category.title}</h3>
+            <span className="service-card-title">{category.title}</span>
             <span>
               {category.slug === 'gym'
                 ? 'Два тарифа'
                 : 'Занятия со специалистом'}
             </span>
             <span className="text-link">Подробнее ↗</span>
-          </a>
+          </PriceButton>
         ))}
         <div className="massage-group">
           <h3>Массажи</h3>
           <div className="massage-links">
             {priceCategories.slice(3).map((category) => (
-              <a href={priceUrl(category.slug)} key={category.slug}>
+              <PriceButton category={category} key={category.slug}>
                 {category.title}
                 <span aria-hidden="true">↗</span>
-              </a>
+              </PriceButton>
             ))}
           </div>
         </div>

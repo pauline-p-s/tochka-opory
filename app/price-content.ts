@@ -10,7 +10,7 @@ type PriceGroup = {
   items: PriceItem[];
 };
 
-type PriceCategory = {
+export type PriceCategory = {
   slug: string;
   title: string;
   description: string;
@@ -174,6 +174,3 @@ export const priceCategories: PriceCategory[] = [
     ],
   },
 ];
-export function priceUrl(slug: string) {
-  return (process.env.NEXT_PUBLIC_BASE_PATH || '') + '/prices/' + slug + '/';
-}

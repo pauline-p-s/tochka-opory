@@ -473,19 +473,26 @@
   font-weight: 600;
   margin-bottom: 8px;
 }
-.documents ul {
+.document-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 14px 28px;
   color: #626c66;
   font-size: 14px;
   line-height: 1.5;
 }
-.documents li {
+.documents .document-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.document-list li {
   overflow-wrap: anywhere;
+}
+.document-list a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .documents small {
   font-size: 12px;
@@ -500,7 +507,7 @@
     grid-template-columns: 1fr;
     gap: 7px;
   }
-  .documents ul {
+  .documents .document-list {
     grid-template-columns: 1fr;
   }
 }

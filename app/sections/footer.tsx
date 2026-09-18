@@ -1,5 +1,5 @@
 import Brand from '../brand';
-import { documents } from '../site-content';
+import DocumentLinks from '../document-links';
 export default function FooterSection() {
   return (
     <footer className="panel">
@@ -28,16 +28,12 @@ export default function FooterSection() {
           <a href="#faq">Вопросы и ответы</a>
           <a href="#contacts">Контакты</a>
         </div>
-        <div className="documents">
+        <div className="documents" id="documents">
           <b>Документы</b>
-          <ul>
-            {documents.map((doc) => (
-              <li key={doc}>
-                <a href="#faq">{doc}</a>
-              </li>
-            ))}
-          </ul>
-          <small>Документы будут добавлены.</small>
+          <DocumentLinks />
+          <small>
+            Название открывает документ на Яндекс Диске в новой вкладке.
+          </small>
         </div>
       </div>
       <div className="footer-bottom">

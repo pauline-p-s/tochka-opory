@@ -591,40 +591,64 @@ h3 {
 }
 .review-grid {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
-.review-placeholder {
+.review-card {
+  min-width: 0;
   background: #f1f1f1;
-  padding: 35px;
-  border-radius: 0;
+  padding: 32px;
 }
-.review-placeholder h3 {
-  font-size: 32px;
+.review-with-photos {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 36px;
 }
-.quote-mark {
-  font-size: 80px;
-  line-height: 1;
+.review-photos {
+  width: 100%;
+  max-width: 270px;
+  justify-self: center;
+}
+.review-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.review-photo-series {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  max-width: none;
+}
+.review-author {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 20px;
+}
+.review-author h3 {
+  margin: 0;
   color: #0e725a;
+  font-size: 24px;
+  font-weight: 500;
 }
-.review-placeholder p {
-  max-width: 400px;
-  color: #626c66;
-}
-.review-short {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-}
-.review-short > div {
-  background: #f1f1f1;
-  border-radius: 0;
-  padding: 24px;
-  width: 50%;
+.review-author span {
   font-size: 14px;
-  color: #737c76;
-  display: flex;
-  justify-content: space-between;
+  color: #626b68;
+}
+.review-body blockquote {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.review-body p {
+  margin: 0;
+}
+.review-body p + p {
+  margin-top: 16px;
 }
 .prices-grid {
   display: grid;
@@ -973,20 +997,18 @@ footer {
   .review-grid {
     grid-template-columns: 1fr;
   }
-  .review-grid > .placeholder {
-    min-height: 300px;
+  .review-card {
+    padding: 24px;
   }
-  .review-placeholder {
-    padding: 26px;
+  .review-with-photos {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
-  .review-placeholder h3 {
-    font-size: 26px;
+  .review-photo-series {
+    gap: 6px;
   }
-  .review-short {
-    flex-direction: column;
-  }
-  .review-short > div {
-    width: 100%;
+  .review-author h3 {
+    font-size: 22px;
   }
   .price-card {
     min-height: 300px;

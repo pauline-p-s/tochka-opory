@@ -591,64 +591,156 @@ h3 {
 }
 .review-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
 }
 .review-card {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
+  min-height: 340px;
   background: #f1f1f1;
-  padding: 32px;
-}
-.review-with-photos {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  align-items: center;
-  gap: 36px;
+  padding: 24px;
 }
 .review-photos {
-  width: 100%;
-  max-width: 270px;
-  justify-self: center;
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 20px;
 }
-.review-photos img {
+.review-photo-button {
+  position: relative;
+  flex: 0 1 76px;
+  min-width: 0;
+  height: 76px;
+  padding: 0;
+  border: 0;
+  background: #3e4446;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+.review-photo-button img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
-.review-photo-series {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  max-width: none;
+.review-photo-button svg {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  color: white;
+  filter: drop-shadow(0 1px 2px #000);
+}
+.review-photo-button:hover img {
+  opacity: 0.85;
 }
 .review-author {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 8px 16px;
-  margin-bottom: 20px;
+  gap: 4px 12px;
+  margin-bottom: 16px;
 }
 .review-author h3 {
   margin: 0;
   color: #0e725a;
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 500;
 }
 .review-author span {
   font-size: 14px;
   color: #626b68;
 }
-.review-body blockquote {
-  margin: 0;
+.review-text summary {
+  display: block;
+  list-style: none;
+  cursor: pointer;
+}
+.review-text summary::-webkit-details-marker {
+  display: none;
+}
+.review-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.65;
+}
+.review-read-more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  color: #0e725a;
+  font-size: 14px;
+  font-weight: 500;
+}
+.review-text summary:hover .review-read-more {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.review-toggle-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+.review-close-label,
+.review-text[open] .review-excerpt,
+.review-text[open] .review-read-label {
+  display: none;
+}
+.review-text[open] .review-close-label {
+  display: inline;
+}
+.review-text[open] .review-toggle-icon {
+  transform: rotate(45deg);
+}
+.review-body blockquote {
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 1.65;
 }
 .review-body p {
   margin: 0;
 }
 .review-body p + p {
   margin-top: 16px;
+}
+.review-photo-dialog[data-slot='dialog-content'] {
+  width: fit-content;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  gap: 0;
+  border-radius: 0;
+  background: #3e4446;
+}
+.review-photo-dialog > img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  object-fit: contain;
+}
+.review-photo-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: #fff;
+  color: #3e4446;
+  cursor: pointer;
+}
+.review-photo-close:hover {
+  background: #e2ede7;
 }
 .prices-grid {
   display: grid;
@@ -869,6 +961,9 @@ footer {
   opacity: 0.65;
 }
 @media (max-width: 1050px) {
+  .review-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .section {
     padding: 42px 30px;
   }
@@ -998,17 +1093,8 @@ footer {
     grid-template-columns: 1fr;
   }
   .review-card {
-    padding: 24px;
-  }
-  .review-with-photos {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .review-photo-series {
-    gap: 6px;
-  }
-  .review-author h3 {
-    font-size: 22px;
+    min-height: 0;
+    padding: 20px;
   }
   .price-card {
     min-height: 300px;

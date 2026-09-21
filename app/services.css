@@ -27,8 +27,16 @@
   min-width: 0;
   align-self: start;
 }
-.person .placeholder {
-  border-bottom: 3px solid #007f64;
+.person-photo {
+  display: block;
+  width: 100%;
+  height: clamp(300px, 34vw, 460px);
+  object-fit: cover;
+  object-position: center 28%;
+  border-bottom: 3px solid #0e725a;
+}
+.person-without-photo {
+  border-top: 3px solid #0e725a;
 }
 .person-body {
   padding: 28px;
@@ -42,7 +50,7 @@
   color: #0e725a;
 }
 .person-body > p {
-  font-size: 15px;
+  font-size: 16px;
 }
 .person details ul {
   padding-left: 20px;
@@ -54,6 +62,68 @@
 .person details h4 {
   font-size: 16px;
   margin: 12px 0;
+}
+.person summary {
+  gap: 16px;
+  align-items: center;
+  font-weight: 600;
+}
+.person summary svg {
+  flex-shrink: 0;
+}
+.person-achievements {
+  margin-top: 28px;
+  padding: 16px 20px;
+  border-left: 3px solid #0e725a;
+  background: #f1f1f1;
+}
+.person-achievements h4 {
+  color: #0e725a;
+}
+.person-document-count {
+  margin-left: 6px;
+  color: #0e725a;
+  font-size: 14px;
+  font-weight: 400;
+}
+.person-documents .person-document-note {
+  margin: 0 0 12px;
+  padding: 0;
+  font-size: 14px;
+  color: #626c66;
+}
+.person-documents .person-document-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.person-document-list li {
+  border-top: 1px solid #d8dfdb;
+}
+.person-document-list a {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  color: #0e725a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.person-document-list a span {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.person-document-list a svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.person-document-list a:hover {
+  color: #3e4446;
+}
+.person summary:focus-visible,
+.person-document-list a:focus-visible {
+  outline: 2px solid #0e725a;
+  outline-offset: 4px;
 }
 .person details[open] summary svg {
   transform: rotate(45deg);

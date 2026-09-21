@@ -33,10 +33,10 @@
   height: clamp(300px, 34vw, 460px);
   object-fit: cover;
   object-position: center 28%;
-  border-bottom: 3px solid #0e725a;
+  border-bottom: 3px solid var(--accent-burgundy);
 }
 .person-without-photo {
-  border-top: 3px solid #0e725a;
+  border-top: 3px solid var(--accent-burgundy);
 }
 .person-body {
   padding: 28px;

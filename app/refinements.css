@@ -10,13 +10,14 @@
 .usp-card {
   padding: 32px;
   background: #f1f1f1;
+  border: 1px solid color-mix(in srgb, var(--accent-burgundy) 30%, transparent);
   min-width: 0;
 }
 .usp-card > span {
   display: block;
   font-size: 13px;
   margin-bottom: 32px;
-  color: #0e725a;
+  color: var(--accent-burgundy);
 }
 .usp-card h3 {
   color: #0e725a;

@@ -135,6 +135,7 @@ nav a:hover {
   flex-direction: column;
 }
 .eyebrow {
+  color: var(--accent-burgundy);
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -146,7 +147,7 @@ nav a:hover {
   display: inline-block;
   width: 6px;
   height: 6px;
-  background: var(--primary);
+  background: currentColor;
   border-radius: 0;
   margin-right: 10px;
   vertical-align: middle;
@@ -393,6 +394,11 @@ h3 {
   background: #0e725a;
   color: white;
 }
+.route-section .eyebrow,
+.green-surface .eyebrow,
+.result .eyebrow {
+  color: #fff;
+}
 .route-section .eyebrow:before {
   background: #fff;
 }
@@ -489,7 +495,7 @@ h3 {
   min-height: 320px;
 }
 .person-role {
-  color: #0e725a;
+  color: var(--accent-burgundy);
   margin: 22px 0 10px;
   font-size: 13px;
 }

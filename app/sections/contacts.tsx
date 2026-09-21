@@ -1,3 +1,4 @@
+import MessengerLinks from '../messenger-links';
 import { Heading } from './shared';
 import { ContactButton } from '../contact-dialog';
 export default function ContactsSection() {
@@ -38,14 +39,22 @@ export default function ContactsSection() {
           </div>
           <div>
             <span>Телефон и email</span>
-            <p>Контакты будут добавлены</p>
+            <p>
+              <a href="tel:+74997280383">+7 499 728-03-83</a>
+              <br />
+              <a href="mailto:receptiontochkaopori@yandex.ru">receptiontochkaopori@yandex.ru</a>
+            </p>
+          </div>
+          <div>
+            <span>Мессенджеры</span>
+            <MessengerLinks />
           </div>
           <div>
             <span>Режим работы</span>
             <p>
               Понедельник — воскресенье
               <br />
-              9:00–21:00
+              9:00–22:00
             </p>
           </div>
           <div>
@@ -57,10 +66,12 @@ export default function ContactsSection() {
           </div>
           <div className="contact-directions">
             <span>Схемы проезда</span>
-            <p>
-              От метро «Полежаевская», ТЦ «Авиапарк» и метро «Сокол». Подробные
-              схемы и время в пути добавим после получения материалов.
-            </p>
+            <div className="contact-routes">
+              <p><strong>Метро Сокол</strong><br />Выход 6, автобусы 403, 306, с372, 5-я остановка «Песчаная площадь», в пути 10 минут.</p>
+              <p><strong>Метро Полежаевская</strong><br />Выход 4, автобусы 403, 322, 5-я остановка «Песчаная площадь», в пути 5 минут.</p>
+              <p><strong>МЦК Зорге</strong><br />Выход 2, пешком 10 минут.</p>
+              <p><strong>Метро ЦСКА</strong><br />Выход 1, автобус 318, 4-я остановка «Песчаная площадь», в пути 15 минут.</p>
+            </div>
           </div>
           <ContactButton className="text-link">Задать вопрос ↗</ContactButton>
         </div>

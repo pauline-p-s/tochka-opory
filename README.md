@@ -36,5 +36,5 @@ NEXT_PUBLIC_BASE_PATH=/tochka-opory node scripts/prepare-pages.mjs
 - `app/globals.css`, `app/refinements.css` — оформление.
 - `public/brand` — оригинальные SVG из Figma.
 
-Форма демонстрационная: данные не отправляются и не сохраняются.
+Форма отправляет имя, телефон и email через FormSubmit на receptiontochkaopori@yandex.ru. При первой отправке получатель должен подтвердить адрес по письму FormSubmit. Тестовая отправка не выполнялась.
 Фотографии, сведения о специалистах, цены, точные контакты и документы ждут материалов заказчика.

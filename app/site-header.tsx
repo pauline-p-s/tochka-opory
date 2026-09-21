@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react';
 import { Dialog } from '@base-ui/react/dialog';
 import Brand from './brand';
-import { ContactButton, useContactDialog } from './contact-dialog';
+import { useContactDialog } from './contact-dialog';
 
 const sections = [
   { href: '#about', title: 'О центре' },
@@ -34,13 +34,13 @@ export default function SiteHeader() {
         <Brand />
         <a className="header-address" href="#contacts">
           <span>Москва, Новопесчаная улица, 20/10к2</span>
-          <span>Ежедневно, 9:00–21:00</span>
+          <span>Ежедневно, 9:00–22:00</span>
         </a>
-        <ContactButton className="button burgundy header-contact">
-          <span className="header-contact-long">Связаться с нами</span>
-          <span className="header-contact-short">Связаться</span>
+        <a href="tel:+74997280383" className="button burgundy header-contact">
+          <span className="header-contact-long">+7 499 728-03-83</span>
+          <span className="header-contact-short">Позвонить</span>
           <span aria-hidden="true">↗</span>
-        </ContactButton>
+        </a>
         <Dialog.Root
           open={open}
           onOpenChange={setOpen}
@@ -138,7 +138,7 @@ export default function SiteHeader() {
                       <br /> Новопесчаная улица,
                       <br /> дом 20/10к2
                     </a>
-                    <p>Ежедневно, 9:00–21:00</p>
+                    <p>Ежедневно, 9:00–22:00</p>
                     <button
                       className="button menu-contact-button"
                       onClick={() => closeTo('contact')}

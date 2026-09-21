@@ -37,11 +37,14 @@ export function ContactButton({
 export default function ContactDialog({ children }: { children: ReactNode }) {
   const [sent, setSent] = useState(false);
   const [open, setOpen] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   return (
     <ContactDialogContext.Provider
       value={() => {
         setSent(false);
+        setError('');
         setOpen(true);
       }}
     >
@@ -76,14 +79,39 @@ export default function ContactDialog({ children }: { children: ReactNode }) {
           ) : (
             <form
               className="contact-dialog-form"
-              onSubmit={(event) => {
+              onSubmit={async (event) => {
                 event.preventDefault();
-                if (event.currentTarget.checkValidity()) {
-                  event.currentTarget.reset();
+                if (sending || !event.currentTarget.checkValidity()) return;
+                const form = event.currentTarget;
+                const fields = new FormData(form);
+                setSending(true);
+                setError('');
+                try {
+                  const response = await fetch('https://formsubmit.co/ajax/receptiontochkaopori@yandex.ru', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                    body: JSON.stringify({
+                      name: fields.get('full-name'),
+                      phone: fields.get('phone'),
+                      email: fields.get('email'),
+                      _honey: fields.get('_honey'),
+                      _subject: 'Заявка на консультацию — Точка опоры',
+                      _template: 'table',
+                    }),
+                    signal: AbortSignal.timeout(20000),
+                  });
+                  const result = await response.json();
+                  if (!response.ok || !result || typeof result !== 'object' || !('success' in result) || (result.success !== true && result.success !== 'true')) throw new Error('Submission failed');
+                  form.reset();
                   setSent(true);
+                } catch {
+                  setError('Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам: +7 499 728-03-83.');
+                } finally {
+                  setSending(false);
                 }
               }}
             >
+              <input type="text" name="_honey" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} aria-hidden="true" />
               <label htmlFor="full-name">Имя</label>
               <Input
                 id="full-name"
@@ -115,11 +143,12 @@ export default function ContactDialog({ children }: { children: ReactNode }) {
                 autoComplete="email"
                 placeholder="mail@example.ru"
               />
-              <button className="button burgundy" type="submit">
-                Свяжитесь со мной <ArrowUpRight size={19} />
+              {error && <p role="alert">{error}</p>}
+              <button className="button burgundy" type="submit" disabled={sending} aria-busy={sending}>
+                {sending ? 'Отправляем…' : 'Свяжитесь со мной'} <ArrowUpRight size={19} />
               </button>
               <p className="form-note">
-                Демонстрационная форма. Данные не отправляются и не сохраняются.
+                Оставьте номер телефона — мы свяжемся с вами.
               </p>
             </form>
           )}

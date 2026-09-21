@@ -601,7 +601,6 @@ h3 {
   margin-top: 32px;
   padding: 32px;
   color: var(--foreground);
-  background: var(--background);
 }
 .space-equipment h3 {
   font-size: clamp(20px, 2.4vw, 28px);

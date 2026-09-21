@@ -553,18 +553,86 @@ h3 {
 .green-surface p {
   color: #d4e5dc;
 }
-.space-grid > .placeholder:not(.space-large) {
-  grid-column: span 2;
-  min-height: 240px;
+.space-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-width: 0;
 }
 .space-small {
-  padding: 25px;
-  background: #f1f1f1;
-  border-radius: 0;
+  position: relative;
+  margin: 0;
   grid-column: span 2;
+  min-height: 300px;
+  overflow: hidden;
 }
-.space-small h3 {
+.space-small > img {
+  position: absolute;
+  inset: 0;
+  object-position: center 58%;
+}
+.space-small figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 48px 25px 25px;
+  background: linear-gradient(transparent, rgb(0 0 0 / 65%));
+  color: white;
   font-size: 22px;
+  font-weight: 500;
+}
+.space-gym {
+  margin-top: 40px;
+}
+.space-gym h3 {
+  margin-bottom: 20px;
+  font-size: clamp(24px, 3vw, 36px);
+}
+.space-gym-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.space-gym-photos img {
+  height: auto;
+  aspect-ratio: 3 / 4;
+}
+.space-equipment {
+  margin-top: 32px;
+  padding: 32px;
+  color: white;
+  background: #3e4446;
+}
+.space-equipment h3 {
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.4;
+  margin-bottom: 28px;
+}
+.space-equipment-logos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 28px;
+}
+.space-equipment-logos img {
+  width: 100%;
+  height: 64px;
+  object-fit: contain;
+}
+@media (max-width: 700px) {
+  .space-gym-photos {
+    grid-template-columns: 1fr;
+  }
+  .space-equipment {
+    padding: 24px;
+  }
+  .space-equipment-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .space-equipment-logos img {
+    height: 48px;
+  }
 }
 .result {
   padding: 80px 48px;

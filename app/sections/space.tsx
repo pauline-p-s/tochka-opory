@@ -1,5 +1,6 @@
-import { Heading, Photo } from './shared';
+import { Heading } from './shared';
 export default function SpaceSection() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
     <section className="section panel reveal" id="space">
       <Heading
@@ -13,7 +14,7 @@ export default function SpaceSection() {
         }
       />
       <div className="space-grid">
-        <Photo label="Фото · пространство центра" className="space-large" />
+        <img className="space-large space-photo" src={basePath + "/space/massage.jpg"} alt="Массажный кабинет центра" width={1440} height={1920} loading="lazy" />
         <div className="space-stat">
           <b>3</b>
           <h3>спортивных зала</h3>
@@ -26,9 +27,24 @@ export default function SpaceSection() {
             лимфодренажный массаж и метамассаж.
           </p>
         </div>
-        <Photo label="Фото · оборудование" />
-        <div className="space-small">
-          <h3>Сауна</h3>
+        <figure className="space-small">
+          <img className="space-photo" src={basePath + "/space/sauna.jpg"} alt="Сауна центра" width={1440} height={1920} loading="lazy" />
+          <figcaption>Сауна</figcaption>
+        </figure>
+      </div>
+      <div className="space-gym">
+        <h3>Тренажерный зал</h3>
+        <div className="space-gym-photos">
+          <img className="space-photo" src={basePath + "/space/gym.jpg"} alt="Тренажерный зал с силовым оборудованием" width={1440} height={1920} loading="lazy" />
+          <img className="space-photo" src={basePath + "/space/gym-equipment.jpg"} alt="Блочные тренажеры в зале центра" width={1440} height={1920} loading="lazy" />
+        </div>
+      </div>
+      <div className="space-equipment">
+        <h3>Используем сертифицированное оборудование</h3>
+        <div className="space-equipment-logos" role="img" aria-label="Логотипы производителей оборудования центра">
+          {[1, 2, 3, 4].map(number => (
+            <img key={number} src={basePath + `/space/equipment-logo-${number}.svg`} alt="" loading="lazy" />
+          ))}
         </div>
       </div>
     </section>

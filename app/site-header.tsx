@@ -36,7 +36,7 @@ export default function SiteHeader() {
           <span>Москва, Новопесчаная улица, 20/10к2</span>
           <span>Ежедневно, 9:00–21:00</span>
         </a>
-        <ContactButton className="button header-contact">
+        <ContactButton className="button burgundy header-contact">
           <span className="header-contact-long">Связаться с нами</span>
           <span className="header-contact-short">Связаться</span>
           <span aria-hidden="true">↗</span>

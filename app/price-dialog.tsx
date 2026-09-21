@@ -130,7 +130,7 @@ export function PriceButton({
           )}
           <button
             type="button"
-            className="button green"
+            className="button burgundy"
             onClick={() => {
               contactRequested.current = true;
               changeOpen(false);

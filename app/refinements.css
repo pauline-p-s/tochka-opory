@@ -343,6 +343,20 @@
   color: #fff;
   background: #145c4b;
 }
+.button.burgundy {
+  color: #fff;
+  background: var(--accent-burgundy);
+  border-color: var(--accent-burgundy);
+}
+.button.burgundy:hover,
+.button.burgundy:focus-visible {
+  color: #fff;
+  background: var(--accent-burgundy-hover);
+  border-color: var(--accent-burgundy-hover);
+}
+.button.burgundy:focus-visible {
+  outline-color: var(--accent-burgundy);
+}
 .button.light {
   color: #3e4446;
   background: #fff;

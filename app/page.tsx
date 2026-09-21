@@ -26,7 +26,7 @@ export default function Home() {
                 Поможем сохранить вашу спортивную форму
               </span>
             </p>
-            <ContactButton className="button green">
+            <ContactButton className="button burgundy">
               Записаться на консультацию <span>↗</span>
             </ContactButton>
           </div>

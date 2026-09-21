@@ -115,7 +115,7 @@ export default function ContactDialog({ children }: { children: ReactNode }) {
                 autoComplete="email"
                 placeholder="mail@example.ru"
               />
-              <button className="button green" type="submit">
+              <button className="button burgundy" type="submit">
                 Свяжитесь со мной <ArrowUpRight size={19} />
               </button>
               <p className="form-note">

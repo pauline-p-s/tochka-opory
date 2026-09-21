@@ -31,9 +31,6 @@ export default function FooterSection() {
         <div className="documents" id="documents">
           <b>Документы</b>
           <DocumentLinks />
-          <small>
-            Название открывает документ на Яндекс Диске в новой вкладке.
-          </small>
         </div>
       </div>
       <div className="footer-bottom">

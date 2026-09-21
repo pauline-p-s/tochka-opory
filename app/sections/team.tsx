@@ -79,9 +79,6 @@ export default function TeamSection() {
                     </span>
                     <Plus size={16} aria-hidden="true" />
                   </summary>
-                  <p className="person-document-note">
-                    Сканы на Яндекс Диске · откроются в новой вкладке
-                  </p>
                   <ul className="person-document-list">
                     {person.documents.map((document) => (
                       <li key={document.file}>

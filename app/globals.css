@@ -241,6 +241,41 @@ em {
   max-width: 850px;
   margin: 130px auto;
 }
+.brand-background {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.background-brand-mark {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.5;
+  width: 300px;
+  height: auto;
+}
+.intro .background-brand-mark {
+  right: -90px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.faq-section .background-brand-mark {
+  left: -35px;
+  bottom: -170px;
+}
+@media (max-width: 700px) {
+  .intro .background-brand-mark {
+    width: 220px;
+    right: -105px;
+  }
+  .faq-section .background-brand-mark {
+    width: 220px;
+    left: auto;
+    right: -100px;
+    bottom: -90px;
+  }
+}
 .intro p:last-child {
   max-width: 470px;
   margin: 24px auto;
@@ -608,15 +643,12 @@ h3 {
   margin-bottom: 28px;
 }
 .space-equipment-logos {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: center;
-  gap: 28px;
+  width: 100%;
 }
 .space-equipment-logos img {
+  display: block;
   width: 100%;
-  height: 64px;
-  object-fit: contain;
+  height: auto;
 }
 @media (max-width: 700px) {
   .space-gym-photos {
@@ -624,13 +656,6 @@ h3 {
   }
   .space-equipment {
     padding: 24px;
-  }
-  .space-equipment-logos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
-  .space-equipment-logos img {
-    height: 48px;
   }
 }
 .result {

@@ -454,6 +454,10 @@
   margin: 0;
   overflow-wrap: anywhere;
 }
+.contact-details a[href^='tel:'],
+.contact-details a[href^='mailto:'] {
+  color: #0e725a;
+}
 .contact-details .text-link {
   margin-top: 12px;
 }

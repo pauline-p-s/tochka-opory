@@ -1,6 +1,7 @@
 export default function AboutSection() {
   return (
-    <section className="intro reveal" id="about">
+    <section className="intro reveal brand-background" id="about">
+      <img className="background-brand-mark" src={(process.env.NEXT_PUBLIC_BASE_PATH || '') + '/dot-logo-mark.svg'} alt="" aria-hidden="true" />
       <p className="eyebrow">О центре</p>
       <h2>
         Восстановление

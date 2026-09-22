@@ -8,7 +8,8 @@ import { questions } from '../site-content';
 import DocumentLinks from '../document-links';
 export default function FaqSection() {
   return (
-    <section className="section panel faq-section reveal" id="faq">
+    <section className="section panel faq-section reveal brand-background" id="faq">
+      <img className="background-brand-mark" src={(process.env.NEXT_PUBLIC_BASE_PATH || '') + '/dot-logo-mark.svg'} alt="" aria-hidden="true" loading="lazy" />
       <div>
         <p className="eyebrow">Вопросы и ответы</p>
         <h2>

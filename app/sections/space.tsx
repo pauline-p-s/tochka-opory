@@ -42,9 +42,7 @@ export default function SpaceSection() {
       <div className="space-equipment">
         <h3>Используем сертифицированное оборудование</h3>
         <div className="space-equipment-logos" role="img" aria-label="Логотипы производителей оборудования центра">
-          {[1, 2, 3, 4].map(number => (
-            <img key={number} src={basePath + `/space/equipment-logo-${number}.svg`} alt="" loading="lazy" />
-          ))}
+          <img src={basePath + '/space/equipment-logos.svg'} alt="" width={3504} height={203} loading="lazy" />
         </div>
       </div>
     </section>

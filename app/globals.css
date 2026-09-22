@@ -251,7 +251,7 @@ em {
   z-index: -1;
   pointer-events: none;
   user-select: none;
-  opacity: 0.5;
+  opacity: 0.2;
   width: 300px;
   height: auto;
 }
@@ -262,7 +262,7 @@ em {
 }
 .faq-section .background-brand-mark {
   left: -35px;
-  bottom: -170px;
+  bottom: 0;
 }
 @media (max-width: 700px) {
   .intro .background-brand-mark {
@@ -272,8 +272,8 @@ em {
   .faq-section .background-brand-mark {
     width: 220px;
     left: auto;
-    right: -100px;
-    bottom: -90px;
+    right: 0;
+    bottom: 0;
   }
 }
 .intro p:last-child {

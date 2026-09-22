@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, type ReactNode } from 'react';
-import { ArrowUpRight, Check, X } from 'lucide-react';
+import { ArrowUpRight, X } from 'lucide-react';
 import {
   Dialog,
   DialogClose,
@@ -35,26 +35,18 @@ export function ContactButton({
 }
 
 export default function ContactDialog({ children }: { children: ReactNode }) {
-  const [sent, setSent] = useState(false);
   const [open, setOpen] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [error, setError] = useState('');
 
   return (
     <ContactDialogContext.Provider
       value={() => {
-        setSent(false);
-        setError('');
         setOpen(true);
       }}
     >
       {children}
       <Dialog
         open={open}
-        onOpenChange={(open) => {
-          setOpen(open);
-          if (open) setSent(false);
-        }}
+        onOpenChange={setOpen}
       >
         <DialogContent className="contact-dialog" showCloseButton={false}>
           <DialogClose
@@ -64,53 +56,19 @@ export default function ContactDialog({ children }: { children: ReactNode }) {
             <X size={22} />
           </DialogClose>
           <DialogTitle className="contact-dialog-title">
-            {sent ? 'Спасибо!' : 'Записаться на консультацию'}
+            Записаться на консультацию
           </DialogTitle>
           <DialogDescription className="contact-dialog-description">
-            {sent
-              ? 'Мы скоро с вами свяжемся'
-              : 'Оставьте контакты — поможем определить, с чего начать'}
+            Оставьте контакты — поможем определить, с чего начать
           </DialogDescription>
-          {sent ? (
-            <div className="contact-dialog-success" role="status">
-              <Check size={32} aria-hidden="true" />
-              <DialogClose className="button green">Закрыть</DialogClose>
-            </div>
-          ) : (
-            <form
-              className="contact-dialog-form"
-              onSubmit={async (event) => {
-                event.preventDefault();
-                if (sending || !event.currentTarget.checkValidity()) return;
-                const form = event.currentTarget;
-                const fields = new FormData(form);
-                setSending(true);
-                setError('');
-                try {
-                  const response = await fetch('https://formsubmit.co/ajax/receptiontochkaopori@yandex.ru', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-                    body: JSON.stringify({
-                      name: fields.get('full-name'),
-                      phone: fields.get('phone'),
-                      email: fields.get('email'),
-                      _honey: fields.get('_honey'),
-                      _subject: 'Заявка на консультацию — Точка опоры',
-                      _template: 'table',
-                    }),
-                    signal: AbortSignal.timeout(20000),
-                  });
-                  const result = await response.json();
-                  if (!response.ok || !result || typeof result !== 'object' || !('success' in result) || (result.success !== true && result.success !== 'true')) throw new Error('Submission failed');
-                  form.reset();
-                  setSent(true);
-                } catch {
-                  setError('Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам: +7 499 728-03-83.');
-                } finally {
-                  setSending(false);
-                }
-              }}
-            >
+          <form
+            className="contact-dialog-form"
+            action="https://formsubmit.co/receptiontochkaopori@yandex.ru"
+            method="POST"
+          >
+              <input type="hidden" name="_subject" value="Заявка на консультацию — Точка опоры" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_url" value="https://pauline-p-s.github.io/tochka-opory/" />
               <input type="text" name="_honey" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} aria-hidden="true" />
               <label htmlFor="full-name">Имя</label>
               <Input
@@ -143,15 +101,13 @@ export default function ContactDialog({ children }: { children: ReactNode }) {
                 autoComplete="email"
                 placeholder="mail@example.ru"
               />
-              {error && <p role="alert">{error}</p>}
-              <button className="button burgundy" type="submit" disabled={sending} aria-busy={sending}>
-                {sending ? 'Отправляем…' : 'Свяжитесь со мной'} <ArrowUpRight size={19} />
+              <button className="button burgundy" type="submit">
+                Свяжитесь со мной <ArrowUpRight size={19} />
               </button>
               <p className="form-note">
-                Оставьте номер телефона — мы свяжемся с вами.
+                После отправки откроется страница подтверждения.
               </p>
-            </form>
-          )}
+          </form>
         </DialogContent>
       </Dialog>
     </ContactDialogContext.Provider>

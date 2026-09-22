@@ -479,10 +479,6 @@
   display: grid;
   gap: 18px;
 }
-.contact-dialog-form .button:disabled {
-  opacity: 0.65;
-  cursor: wait;
-}
 .map-placeholder {
   min-height: 440px;
   gap: 22px;
